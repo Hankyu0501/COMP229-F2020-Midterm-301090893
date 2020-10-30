@@ -2,6 +2,7 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
+const books = require('../models/books');
 
 // define the book model
 let book = require('../models/books');
@@ -13,8 +14,8 @@ router.get('/', (req, res, next) => {
       return console.error(err);
     }
     else {
-      res.render('books/details', {
-        title: 'Add Book',
+      res.render('books/index', {
+        title: 'Books',
         books: books
       });
     }
@@ -38,7 +39,6 @@ router.get('/add', (req, res, next) => {
         });
       }
     });
-
 });
 
 // POST process the Book Details page and create a new Book - CREATE
