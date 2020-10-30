@@ -1,0 +1,18 @@
+{
+"book" :[
+{
+"Title" : "Harry Potter",
+"Description" :"A story about a little boy magician",
+"Price" :"36.99",
+"Author" :"J.K.Rowling",
+"Genre" :"Pantasy"
+},
+{
+"Title" :"My sweet orange tree",
+"Description" :"Boy's growth story",
+"Price" :"20.31",
+"Author" :"Marcos Bernstein",
+"Genre" :"novel"
+}
+]
+}
