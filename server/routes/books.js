@@ -8,19 +8,17 @@ let book = require('../models/books');
 
 /* GET books List page. READ */
 router.get('/', (req, res, next) => {
-  // find all books in the books collection
   book.find( (err, books) => {
     if (err) {
       return console.error(err);
     }
     else {
-      res.render('books/index', {
-        title: 'Books',
+      res.render('books/details', {
+        title: 'Add Book',
         books: books
       });
     }
-  });
-
+  }); 
 });
 
 //  GET the Book Details page in order to add a new Book
@@ -80,7 +78,7 @@ router.get('/:id', (req, res, next) => {
      *****************/
     let id = req.params.id;
 
-    book.findBId(id, (err, bookToEdit) =>{
+    book.findById(id, (err, bookToEdit) =>{
         if(err)
         {
             console.log(err)
@@ -91,7 +89,6 @@ router.get('/:id', (req, res, next) => {
             res.render('books/details', {title: 'Edit Book', books: bookToEdit});
         }
     });
-
 });
 
 // POST - process the information passed from the details form and update the document
